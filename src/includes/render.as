@@ -27,8 +27,8 @@
 			gfx.drawtimeline(control);
 			gfx.drawpatternmanager(control);
 		break;
-	  case 2:
-		  gfx.drawinstrumentlist(control);
+		case 2:
+			gfx.drawinstrumentlist(control);
 			gfx.drawinstrument(control);
 		break;
 	}
@@ -48,10 +48,10 @@
 			}
 		}
 		if (help.slowsine < 32) {
-		  gfx.print(0, 170, "NOW EXPORTING AS WAV, PLEASE WAIT", 0, true, true);
+			gfx.print(0, 170, "NOW EXPORTING AS WAV, PLEASE WAIT", 0, true, true);
 		}
 	}else if(control.currentbox>-1){
-	  gfx.drawpatterneditor(control);
+		gfx.drawpatterneditor(control);
 	}else {
 		gfx.fillrect(0, gfx.pianorollposition + gfx.linesize, gfx.screenwidth, gfx.linesize * 13, 14);
 	}
