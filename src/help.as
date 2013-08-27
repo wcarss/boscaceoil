@@ -1,12 +1,12 @@
 ﻿package {
 	import flash.display.*;
 	import flash.geom.*;
-  import flash.events.*;
-  import flash.net.*;
+	import flash.events.*;
+	import flash.net.*;
 	
 	public class help {
 		public static function init():void {
-		  glow = 0;
+			glow = 0;
 			glowdir = 0;
 			slowsine = 0;
 		}
@@ -29,11 +29,11 @@
 			slowsine++;
 			if (slowsine >= 64) slowsine = 0;
 			
-		  if (glowdir == 0) {
-			  glow++; 
+			if (glowdir == 0) {
+				glow++; 
 				if (glow >= 63) glowdir = 1;
 			}else {
-			  glow--;
+				glow--;
 				if (glow < 1) glowdir = 0;
 			}
 		}
@@ -57,19 +57,19 @@
 		}
 		
 		public static function Instr(s:String,c:String,start:int=1):int{
-  		return (s.indexOf(c,start-1)+1);
+			return (s.indexOf(c,start-1)+1);
 		}
 		
 		public static function Mid(s:String,start:int=0,length:int=1):String{
-		  return s.substr(start,length);
+			return s.substr(start,length);
 		}
 		
 		public static function Left(s:String,length:int=1):String{
-		  return s.substr(0,length);
+			return s.substr(0,length);
 		}
 		
 		public static function Right(s:String,length:int=1):String{
-		  return s.substr(s.length-length,length);
+			return s.substr(s.length-length,length);
 		} 
 		
 		public static var glow:int, slowsine:int;
