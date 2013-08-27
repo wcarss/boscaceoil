@@ -2,8 +2,8 @@ package{
 	import air.update.logging.Level;
 	import flash.display.*;
 	import flash.geom.*;
-  import flash.events.*;
-  import flash.net.*;
+	import flash.events.*;
+	import flash.net.*;
 	import flash.text.*;
 	
 	public class gfxbaseclass extends Sprite {
@@ -112,27 +112,27 @@ package{
 		
 		//Text Functions
 		public function initfont():void {			
-		  tf_1.embedFonts = true;
+			tf_1.embedFonts = true;
 			tf_1.defaultTextFormat = new TextFormat("FFF Aquarius Bold Condensed",fontsize[0],0,true);
 			tf_1.width = screenwidth; tf_1.height = 48;
 			tf_1.antiAliasType = AntiAliasType.NORMAL;
 			
-		  tf_2.embedFonts = true;
+			tf_2.embedFonts = true;
 			tf_2.defaultTextFormat = new TextFormat("FFF Aquarius Bold Condensed",fontsize[1],0,true);
 			tf_2.width = screenwidth; tf_2.height = 100;
 			tf_2.antiAliasType = AntiAliasType.NORMAL;
 			
-		  tf_3.embedFonts = true;
+			tf_3.embedFonts = true;
 			tf_3.defaultTextFormat = new TextFormat("FFF Aquarius Bold Condensed",fontsize[2],0,true);
 			tf_3.width = screenwidth; tf_3.height = 100;
 			tf_3.antiAliasType = AntiAliasType.NORMAL;
 			
-		  tf_4.embedFonts = true;
+			tf_4.embedFonts = true;
 			tf_4.defaultTextFormat = new TextFormat("FFF Aquarius Bold Condensed",fontsize[3],0,true);
 			tf_4.width = screenwidth; tf_4.height = 100;
 			tf_4.antiAliasType = AntiAliasType.NORMAL;
 			
-		  tf_5.embedFonts = true;
+			tf_5.embedFonts = true;
 			tf_5.defaultTextFormat = new TextFormat("FFF Aquarius Bold Condensed",fontsize[4],0,true);
 			tf_5.width = screenwidth; tf_5.height = 100;
 			tf_5.antiAliasType = AntiAliasType.NORMAL;
@@ -280,11 +280,11 @@ package{
 			
 			normalrender();
 		}
-		  
+			
 		public var icons:Vector.<BitmapData> = new Vector.<BitmapData>;
 		public var ct:ColorTransform;
-	  public var icons_rect:Rectangle;
-	  public var tl:Point = new Point(0, 0);
+		public var icons_rect:Rectangle;
+		public var tl:Point = new Point(0, 0);
 		public var trect:Rectangle, tpoint:Point, tbuffer:BitmapData;
 		public var i:int, j:int, k:int, l:int, mbi:int, mbj:int;
 		
