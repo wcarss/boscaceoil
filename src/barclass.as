@@ -1,10 +1,10 @@
 package {
 	import flash.display.*;
 	import flash.geom.*;
-  import flash.events.*;
-  import flash.net.*;
+	import flash.events.*;
+	import flash.net.*;
 	
-	public class barclass  {
+	public class barclass	{
 		public function barclass():void {
 			for (var i:int = 0; i < 8; i++) {
 				channel.push( -1);
