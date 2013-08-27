@@ -1,10 +1,10 @@
 package {
 	import flash.display.*;
 	import flash.geom.*;
-  import flash.events.*;
-  import flash.net.*;
+	import flash.events.*;
+	import flash.net.*;
 	
-	public class voicelistclass  {
+	public class voicelistclass	{
 		public function voicelistclass():void {
 			listsize = 0; sublistsize = 0; pagenum = 0;
 			for (var i:int = 0; i < 256; i++) {
