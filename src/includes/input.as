@@ -14,7 +14,7 @@
 	control.list.selection = -1;
 	
 	if(control.clicklist){
-	  if (!key.press) {
+		if (!key.press) {
 			control.clicklist = false;
 		}
 	}
@@ -118,7 +118,7 @@
 				if (control.list.selection > -1) {
 					//List selection stuff here
 					if (control.list.type == control.LIST_CATEGORY) {
-					  control.list.close();
+						control.list.close();
 						control.instrument[control.currentinstrument].category = control.list.item[control.list.selection];
 						control.voicelist.index = control.voicelist.getfirst(control.instrument[control.currentinstrument].category);
 						control.changeinstrumentvoice(control.voicelist.name[control.voicelist.index]);
@@ -273,8 +273,8 @@
 							j = control.patternmanagerview + control.patterncury;
 							if (j > -1 && j<control.numboxes) {
 								control.changemusicbox(j);
-							  control.dragaction = 2;
-							  control.dragpattern = j;
+								control.dragaction = 2;
+								control.dragpattern = j;
 								control.dragx = control.mx; control.dragy = control.my;
 							}
 						}
@@ -327,7 +327,7 @@
 						}else {
 							j = control.instrumentcury + control.instrumentmanagerview;
 							if (j < control.numinstrument) {
-							  control.currentinstrument = j;
+								control.currentinstrument = j;
 							}
 						}
 					}else {
@@ -380,7 +380,7 @@
 			}else if (control.notey > -1) {
 				//Play a single note
 				if (control.currentbox > -1) {
-				  if (control.instrument[control.musicbox[control.currentbox].instr].type == 0) {	
+					if (control.instrument[control.musicbox[control.currentbox].instr].type == 0) {	
 						//Normal instrument
 						j = control.musicbox[control.currentbox].start + (11 - control.notey);
 						if (j >= 0 && j < 128) control._driver.noteOn(control.pianoroll[j], control.instrument[control.musicbox[control.currentbox].instr].voice, control.notelength);
@@ -425,8 +425,8 @@
 						k = 0;
 						if (control.currentbox > -1) {
 							if (control.musicbox[control.currentbox].recordfilter == 1) {
-					      if(control.musicbox[control.currentbox].instr == control.currentinstrument){
-								  k = 1;
+								if(control.musicbox[control.currentbox].instr == control.currentinstrument){
+									k = 1;
 								}
 							}
 						}
@@ -501,7 +501,7 @@
 						if (j > -1) {
 							control.addmusicbox();
 							control.copymusicbox(control.numboxes - 1, j);
-			        control.musicbox[control.numboxes - 1].setnotespan();
+							control.musicbox[control.numboxes - 1].setnotespan();
 							control.patternmanagerview = control.numboxes - 6;
 							control.changemusicbox(control.numboxes - 1);
 							
@@ -565,7 +565,7 @@
 					control.keydelay = 4;
 				}else if (control.press_up) {
 					control.musicbox[control.currentbox].start++;
-					if (control.musicbox[control.currentbox].start > control.pianorollsize-12) control.musicbox[control.currentbox].start =  control.pianorollsize-12;
+					if (control.musicbox[control.currentbox].start > control.pianorollsize-12) control.musicbox[control.currentbox].start =	control.pianorollsize-12;
 					if (control.instrument[control.musicbox[control.currentbox].instr].type > 0) {
 						//Also check for drumkit ranges
 						if (control.musicbox[control.currentbox].start > control.drumkit[control.instrument[control.musicbox[control.currentbox].instr].type-1].size-12) control.musicbox[control.currentbox].start = control.drumkit[control.instrument[control.musicbox[control.currentbox].instr].type-1].size-12;
@@ -609,7 +609,7 @@
 	}
 	
 	if (control.currentbox > -1) {
-	  if (!control.press_down && control.musicbox[control.currentbox].start == -1) {
+		if (!control.press_down && control.musicbox[control.currentbox].start == -1) {
 			control.musicbox[control.currentbox].start = 0;
 		}	
 	}
