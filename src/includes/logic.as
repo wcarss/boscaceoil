@@ -1,7 +1,7 @@
 ﻿public function logic(key:KeyPoll, gfx:graphicsclass, control:controlclass):void {
 	var i:int, j:int, k:int;
 	
-  if (control.doubleclickcheck > 0) control.doubleclickcheck--;
+	if (control.doubleclickcheck > 0) control.doubleclickcheck--;
 	if (gfx.buttonpress > 0) gfx.buttonpress--;
 	
 	if (control.dragaction == 2) {
