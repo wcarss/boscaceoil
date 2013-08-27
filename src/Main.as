@@ -14,10 +14,10 @@ Redistribution and use in source and binary forms,
 with or without modification, are permitted provided that
 the following conditions are met: 
 1. Redistributions of source code must retain the above copyright notice,
-   this list of conditions and the following disclaimer.
+	 this list of conditions and the following disclaimer.
 2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
+	 this list of conditions and the following disclaimer in the documentation
+	 and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
 INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
@@ -35,22 +35,22 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 package{
 	import flash.display.*;
 	import flash.geom.*;
-  import flash.events.*;
-  import flash.net.*;
+	import flash.events.*;
+	import flash.net.*;
 	import flash.media.*;
-  import flash.ui.ContextMenu;
-  import flash.ui.ContextMenuItem;
+	import flash.ui.ContextMenu;
+	import flash.ui.ContextMenuItem;
 	import flash.ui.Keyboard;
 	import bigroom.input.KeyPoll;
-  import flash.ui.Mouse;
+	import flash.ui.Mouse;
 	import flash.utils.getTimer;
 	import flash.utils.Timer;
 
 	public class Main extends Sprite{
-  	include "keypoll.as";
-  	include "includes/logic.as";
-  	include "includes/input.as";
-  	include "includes/render.as";
+		include "keypoll.as";
+		include "includes/logic.as";
+		include "includes/input.as";
+		include "includes/render.as";
 		
 		public function Main():void {
 			key = new KeyPoll(stage);
@@ -74,7 +74,7 @@ package{
 			input(key, gfx, control);
 		}
 		
-    public function _logic():void {
+		public function _logic():void {
 			logic(key, gfx, control);
 			help.updateglow();
 		}
