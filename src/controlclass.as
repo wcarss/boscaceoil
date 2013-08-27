@@ -1,16 +1,16 @@
 ﻿package {
 	import flash.display.*;
 	import flash.geom.*;
-  import flash.events.*;
+	import flash.events.*;
 	import flash.utils.*;
-  import flash.net.*;
+	import flash.net.*;
 	import org.si.sion.SiONDriver;
 	import org.si.sion.SiONData;
 	import org.si.sion.utils.SiONPresetVoice;
 	import org.si.sion.SiONVoice;
-  import org.si.sion.events.*;
+	import org.si.sion.events.*;
 	import flash.filesystem.*;
-  import flash.net.FileFilter;
+	import flash.net.FileFilter;
 		
 	public class controlclass extends Sprite{
 		public var SCALE_NORMAL:int = 0;
@@ -128,7 +128,7 @@
 			for (i = 0; i < 16; i++) {
 				instrument.push(new instrumentclass());
 				if (i == 0) {
-				  instrument[i].voice = _presets["midi.piano1"];
+					instrument[i].voice = _presets["midi.piano1"];
 				}else {
 					voicelist.index = int(Math.random() * voicelist.listsize);
 					instrument[i].voice = _presets[voicelist.voice[voicelist.index]];
@@ -142,7 +142,7 @@
 			instrumentmanagerview = 0;
 			
 			for (i = 0; i < 128; i++) {
-			  musicbox.push(new musicphraseclass());
+				musicbox.push(new musicphraseclass());
 			}
 			numboxes = 1;
 			
@@ -153,7 +153,7 @@
 			key = 0;
 			updatepianoroll();
 			for (i = 0; i < numboxes; i++){
-			  musicbox[i].start = scalesize * 3;
+				musicbox[i].start = scalesize * 3;
 			}
 			
 			currentbox = 0;
@@ -169,11 +169,11 @@
 				programsettings.data.buffersize = buffersize;
 				programsettings.flush();
 				programsettings.close();
-      } else {
+			} else {
 				buffersize = programsettings.data.buffersize;
 				programsettings.flush();
 				programsettings.close();
-      }
+			}
 			
 			
 			_driver = new SiONDriver(buffersize); currentbuffersize = buffersize;
@@ -235,7 +235,7 @@
 												//If pattern uses recorded values, update them
 												if (musicbox[i].recordfilter == 1) {
 													drumkit[instrument[musicbox[i].instr].type-1].updatefilter(musicbox[i].cutoffgraph[looptime % boxcount], musicbox[i].resonancegraph[looptime % boxcount]);
-												  drumkit[instrument[musicbox[i].instr].type-1].updatevolume(musicbox[i].volumegraph[looptime % boxcount]);
+													drumkit[instrument[musicbox[i].instr].type-1].updatevolume(musicbox[i].volumegraph[looptime % boxcount]);
 												}
 												_driver.noteOn(drumkit[instrument[musicbox[i].instr].type-1].voicenote[int(musicbox[i].notes[j].x)], drumkit[instrument[musicbox[i].instr].type-1].voicelist[int(musicbox[i].notes[j].x)], int(musicbox[i].notes[j].y));
 											}
@@ -252,13 +252,13 @@
 			}
 		}
 		
-	  private function SetSwing():void{  
-      if (_driver == null) return;
-      
-      //swing goes from -10 to 10
-      //fswing goes from 0.2 - 1.8
-      var fswing:Number = 0.2+(swing+10)*(1.8-0.2)/20.0;
-      
+		private function SetSwing():void{	
+			if (_driver == null) return;
+			
+			//swing goes from -10 to 10
+			//fswing goes from 0.2 - 1.8
+			var fswing:Number = 0.2+(swing+10)*(1.8-0.2)/20.0;
+			
 			if (swing == 0) {
 				if (swingoff == 1) {
 					_driver.setTimerInterruption(1, _onTimerInterruption);
@@ -270,12 +270,12 @@
 				{
 					_driver.setTimerInterruption(fswing, _onTimerInterruption);
 				}
-				else        
+				else				
 				{
 					_driver.setTimerInterruption(2-fswing, _onTimerInterruption);
 				}
 			}
-    }
+		}
 		
 		public function setbuffersize(t:int):void {
 			if (t == 0) buffersize = 2048;
@@ -291,8 +291,8 @@
 		public function adddrumkitnote(t:int, name:String, voice:String, note:int = 60):void {
 			if (t == 2 && note == 60) note = 16;
 			drumkit[t].voicelist.push(_presets[voice]);
-      drumkit[t].voicename.push(name);
-      drumkit[t].voicenote.push(note);
+			drumkit[t].voicename.push(name);
+			drumkit[t].voicenote.push(note);
 			drumkit[t].size++;
 		}
 		
@@ -447,7 +447,7 @@
 				musicbox[currentbox].start = invertpianoroll[musicbox[currentbox].bottomnote] - 2;
 				if (musicbox[currentbox].start < 0) musicbox[currentbox].start = 0;
 			}else{
-			  musicbox[currentbox].start = scalesize * 3;
+				musicbox[currentbox].start = scalesize * 3;
 			}
 			musicbox[currentbox].setnotespan();
 		}
@@ -472,7 +472,7 @@
 		
 		public function _setscale(t1:int = -1, t2:int = -1, t3:int = -1, t4:int = -1, t5:int = -1, t6:int = -1,
 		                          t7:int = -1, t8:int = -1, t9:int = -1, t10:int = -1, t11:int = -1, t12:int = -1):void {
-		  if (t1 == -1) {
+			if (t1 == -1) {
 				scalesize = 0;
 			}else if (t2 == -1) {
 				scale[0] = t1;
@@ -581,32 +581,32 @@
 		}
 		
 		public function copymusicbox(a:int, b:int):void {
-		  musicbox[a].numnotes = musicbox[b].numnotes;
+			musicbox[a].numnotes = musicbox[b].numnotes;
 			
-		  for (j = 0; j < musicbox[a].numnotes; j++){
-			  musicbox[a].notes[j].x = musicbox[b].notes[j].x;
+			for (j = 0; j < musicbox[a].numnotes; j++){
+				musicbox[a].notes[j].x = musicbox[b].notes[j].x;
 				musicbox[a].notes[j].y = musicbox[b].notes[j].y;
 				musicbox[a].notes[j].width = musicbox[b].notes[j].width;
 				musicbox[a].notes[j].height = musicbox[b].notes[j].height;
 			}
 			
 			for (j = 0; j < 16; j++){
-			  musicbox[a].cutoffgraph[j] = musicbox[b].cutoffgraph[j]
+				musicbox[a].cutoffgraph[j] = musicbox[b].cutoffgraph[j]
 				musicbox[a].resonancegraph[j] = musicbox[b].resonancegraph[j]
 				musicbox[a].volumegraph[j] = musicbox[b].volumegraph[j]
 			}
 			
-		  musicbox[a].recordfilter = musicbox[b].recordfilter;
-		  musicbox[a].topnote = musicbox[b].topnote;
+			musicbox[a].recordfilter = musicbox[b].recordfilter;
+			musicbox[a].topnote = musicbox[b].topnote;
 			musicbox[a].bottomnote = musicbox[b].bottomnote;
 			musicbox[a].notespan = musicbox[b].notespan;
 			
-		  musicbox[a].start = musicbox[b].start;
-		  musicbox[a].key = musicbox[b].key;
-		  musicbox[a].instr = musicbox[b].instr;
-		  musicbox[a].palette = musicbox[b].palette;
-		  musicbox[a].scale = musicbox[b].scale;
-		  musicbox[a].isplayed = musicbox[b].isplayed;
+			musicbox[a].start = musicbox[b].start;
+			musicbox[a].key = musicbox[b].key;
+			musicbox[a].instr = musicbox[b].instr;
+			musicbox[a].palette = musicbox[b].palette;
+			musicbox[a].scale = musicbox[b].scale;
+			musicbox[a].isplayed = musicbox[b].isplayed;
 		}
 		
 		public function deletemusicbox(t:int):void {
@@ -630,7 +630,7 @@
 		
 		public function seekposition(t:int):void {
 			//Make this smoother someday maybe
-		  barposition = t;
+			barposition = t;
 		}
 		
 		public function filllist(t:int):void {
@@ -654,7 +654,7 @@
 					}
 					list.numitems = 23;
 				break;
-			  case LIST_CATEGORY:
+				case LIST_CATEGORY:
 					list.item[0] = "MIDI";
 					list.item[1] = "DRUMKIT";
 					list.item[2] = "CHIPTUNE";
@@ -670,8 +670,8 @@
 					list.item[12] = "WORLD";
 					list.numitems = 13;
 				break;
-			  case LIST_INSTRUMENT:
-				  if (voicelist.sublistsize > 15) {
+				case LIST_INSTRUMENT:
+					if (voicelist.sublistsize > 15) {
 						//Need to split into several pages
 						//Fix pagenum if it got broken somewhere
 						if ((voicelist.pagenum * 15) > voicelist.sublistsize) voicelist.pagenum = 0;
@@ -696,8 +696,8 @@
 						list.numitems = voicelist.sublistsize;
 					}
 				break;
-			  case LIST_SELECTINSTRUMENT:
-				  //For choosing from existing instruments
+				case LIST_SELECTINSTRUMENT:
+					//For choosing from existing instruments
 					for (i = 0; i < numinstrument; i++ ) {
 						list.item[i] = String(i + 1) + " " +instrument[i].name;
 					}
@@ -715,7 +715,7 @@
 		public function setinstrumenttoindex(t:int):void {
 			voicelist.index = instrument[t].index;
 			if (help.Left(voicelist.voice[voicelist.index], 7) == "drumkit") {
-			  instrument[t].type = int(help.Right(voicelist.voice[voicelist.index]));
+				instrument[t].type = int(help.Right(voicelist.voice[voicelist.index]));
 				instrument[t].updatefilter();
 				drumkit[instrument[t].type-1].updatefilter(instrument[t].cutoff, instrument[t].resonance);
 			}else {
@@ -733,12 +733,12 @@
 			instrument[currentinstrument].name = t;
 			voicelist.index = voicelist.getvoice(t);
 			if (help.Left(voicelist.voice[voicelist.index], 7) == "drumkit") {
-			  instrument[currentinstrument].type = int(help.Right(voicelist.voice[voicelist.index]));
+				instrument[currentinstrument].type = int(help.Right(voicelist.voice[voicelist.index]));
 				instrument[currentinstrument].updatefilter();
 				drumkit[instrument[currentinstrument].type-1].updatefilter(instrument[currentinstrument].cutoff, instrument[currentinstrument].resonance);
 				
 				if (currentbox > -1) {
-				  if (musicbox[currentbox].start > drumkit[instrument[currentinstrument].type-1].size) {
+					if (musicbox[currentbox].start > drumkit[instrument[currentinstrument].type-1].size) {
 						musicbox[currentbox].start = 0;
 					}
 				}
@@ -778,23 +778,23 @@
 			//Next, musicboxes
 			filestring += String(numboxes) + ",";
 			for (i = 0; i < numboxes; i++) {
-			  filestring += String(musicbox[i].key) + ",";
+				filestring += String(musicbox[i].key) + ",";
 				filestring += String(musicbox[i].scale) + ",";
 				filestring += String(musicbox[i].instr) + ",";
 				filestring += String(musicbox[i].palette) + ",";
-			  filestring += String(musicbox[i].numnotes) + ",";
+				filestring += String(musicbox[i].numnotes) + ",";
 				for (j = 0; j < musicbox[i].numnotes; j++) {
-				  filestring += String(musicbox[i].notes[j].x) + ",";	
-				  filestring += String(musicbox[i].notes[j].y) + ",";	
-				  filestring += String(musicbox[i].notes[j].width) + ",";	
-				  filestring += String(musicbox[i].notes[j].height) + ",";	
+					filestring += String(musicbox[i].notes[j].x) + ",";	
+					filestring += String(musicbox[i].notes[j].y) + ",";	
+					filestring += String(musicbox[i].notes[j].width) + ",";	
+					filestring += String(musicbox[i].notes[j].height) + ",";	
 				}
 				filestring += String(musicbox[i].recordfilter) + ",";
 				if (musicbox[i].recordfilter == 1) {
 					for (j = 0; j < 16; j++) {
-				    filestring += String(musicbox[i].volumegraph[j]) + ",";
-				    filestring += String(musicbox[i].cutoffgraph[j]) + ",";
-				    filestring += String(musicbox[i].resonancegraph[j]) + ",";
+						filestring += String(musicbox[i].volumegraph[j]) + ",";
+						filestring += String(musicbox[i].cutoffgraph[j]) + ",";
+						filestring += String(musicbox[i].resonancegraph[j]) + ",";
 					}
 				}
 			}
@@ -804,7 +804,7 @@
 			filestring += String(arrange.loopend) + ",";
 			for (i = 0; i < arrange.lastbar; i++) {
 				for (j = 0; j < 8; j++) {
-			    filestring += String(arrange.bar[i].channel[j]) + ",";
+					filestring += String(arrange.bar[i].channel[j]) + ",";
 				}
 			}
 		}
@@ -948,26 +948,26 @@
 			}
 		}
 		
-		public function fileHasExtension(file:File, extension:String):Boolean {     
-			if (!file.extension || file.extension.toLowerCase() != extension) {         
-				return false;     
-			}                 
+		public function fileHasExtension(file:File, extension:String):Boolean {		 
+			if (!file.extension || file.extension.toLowerCase() != extension) {				 
+				return false;		 
+			}								 
 			return true; 
 		}
 		
-		public function addExtensionToFile(file:File, extension:String):void {     
+		public function addExtensionToFile(file:File, extension:String):void {		 
 			file.url += "." + extension; 
 		}
 		
 		public function saveceol():void {
 			file = File.desktopDirectory.resolvePath("*.ceol");
-      file.addEventListener(Event.SELECT, onsaveceol);
+			file.addEventListener(Event.SELECT, onsaveceol);
 			file.browseForSave("Save .ceol File");
 			
 			fixmouseclicks = true;
 		}
 		
-		private function onsaveceol(e:Event):void {    
+		private function onsaveceol(e:Event):void {		
 			file = e.currentTarget as File;
 			
 			if (!fileHasExtension(file, "ceol")) {
@@ -986,13 +986,13 @@
 		
 		public function loadceol():void {
 			file = File.desktopDirectory.resolvePath("");
-      file.addEventListener(Event.SELECT, onloadceol);
+			file.addEventListener(Event.SELECT, onloadceol);
 			file.browseForOpen("Load .ceol File", [ceolFilter]);
 			
 			fixmouseclicks = true;
 		}
 		
-		private function onloadceol(e:Event):void {  
+		private function onloadceol(e:Event):void {	
 			file = e.currentTarget as File;
 			
 			stream = new FileStream();
@@ -1062,13 +1062,13 @@
 			_wav.writeBytes(_data);
 			
 			file = File.desktopDirectory.resolvePath("*.wav");
-      file.addEventListener(Event.SELECT, onsavewav);
+			file.addEventListener(Event.SELECT, onsavewav);
 			file.browseForSave("Export .wav File");
 			
 			fixmouseclicks = true;
 		}
 		
-		private function onsavewav(e:Event):void {    
+		private function onsavewav(e:Event):void {		
 			file = e.currentTarget as File;
 			
 			if (!fileHasExtension(file, "wav")) {
