@@ -1,6 +1,6 @@
 public function generickeypoll(control:controlclass):void {
 	control.press_up = false; control.press_down = false; 
-  control.press_left = false; control.press_right = false; 
+	control.press_left = false; control.press_right = false; 
 	control.press_space = false; control.press_enter = false;
 		
 	if (key.isDown(Keyboard.LEFT)) control.press_left = true;
@@ -10,7 +10,7 @@ public function generickeypoll(control:controlclass):void {
 	if (key.isDown(Keyboard.SPACE)) control.press_space = true;
 	if (key.isDown(Keyboard.ENTER)) control.press_enter = true;
 	
-  control.keypriority = 0;
+	control.keypriority = 0;
 	
 	if (control.keypriority == 3) {control.press_up = false; control.press_down = false;
 	}else if (control.keypriority == 4) { control.press_left = false; control.press_right = false; }
@@ -25,7 +25,7 @@ public function generickeypoll(control:controlclass):void {
 	
 	if (control.keyheld) {
 		if (control.press_space || control.press_right || control.press_left || control.press_enter ||
-		    control.press_down || control.press_up) {
+				control.press_down || control.press_up) {
 			control.press_space = false;
 			control.press_enter = false;
 			control.press_up = false;
