@@ -1,108 +1,108 @@
 ﻿package{
 	import flash.display.*;
 	import flash.geom.*;
-  import flash.events.*;
-  import flash.net.*;
+	import flash.events.*;
+	import flash.net.*;
 	
 	public class graphicsclass extends gfxbaseclass {
 		public function init():void {
 			initgfx();
 			initfont();
 			initpal();
-    }
+		}
 		
 		public function initpal():void {
 			//Initalise all the program's palettes here
-			pal[0].setto(255, 255, 255);      //Pure White
-			pal[1].setto(64, 64, 64);         //Background
-			pal[2].setto(196, 196, 196);      //Menu bar
-			pal[3].setto(160, 160, 160);      //Bar, Bright
-			pal[4].setto(128, 128, 128);      //Bar, Dark
-			pal[5].setto(96, 96, 96);         //Guideline
-			pal[6].setto(64, 64, 64);         //Dark guideline
-			pal[7].setto(180, 180, 180);      //Note names
-			pal[8].setto(128, 0, 0);          //Note, dark part
-			pal[9].setto(196, 0, 0);          //Note, bright part
+			pal[0].setto(255, 255, 255);			//Pure White
+			pal[1].setto(64, 64, 64);				 //Background
+			pal[2].setto(196, 196, 196);			//Menu bar
+			pal[3].setto(160, 160, 160);			//Bar, Bright
+			pal[4].setto(128, 128, 128);			//Bar, Dark
+			pal[5].setto(96, 96, 96);				 //Guideline
+			pal[6].setto(64, 64, 64);				 //Dark guideline
+			pal[7].setto(180, 180, 180);			//Note names
+			pal[8].setto(128, 0, 0);					//Note, dark part
+			pal[9].setto(196, 0, 0);					//Note, bright part
 			
-			pal[10].setto(255, 255, 255);     //Arrangement Bar (bright)
-			pal[11].setto(128, 128, 128);     //Arrangement Bar (dark)
-			pal[12].setto(0, 0, 0);           //Black
-			pal[13].setto(96, 0, 0);           //Dark Red
-			pal[14].setto(32, 32, 32);         //Very dark grey
-			pal[15].setto(255, 0, 0);           //Red
-			pal[16].setto(0, 128, 255);           //Cyan
+			pal[10].setto(255, 255, 255);		 //Arrangement Bar (bright)
+			pal[11].setto(128, 128, 128);		 //Arrangement Bar (dark)
+			pal[12].setto(0, 0, 0);					 //Black
+			pal[13].setto(96, 0, 0);					 //Dark Red
+			pal[14].setto(32, 32, 32);				 //Very dark grey
+			pal[15].setto(255, 0, 0);					 //Red
+			pal[16].setto(0, 128, 255);					 //Cyan
 			
 			//Blue
-			pal[100].setto(5, 84, 185);       //Bar, Bright
-			pal[101].setto(7, 59, 122);       //Bar, Dark
-			pal[102].setto(10, 14, 62);       //Guideline
-			pal[103].setto(5, 7, 31);         //Dark guideline
-			pal[104].setto(196, 66, 16);      //Note, dark part
-			pal[105].setto(255,254,132);      //Note, bright part
+			pal[100].setto(5, 84, 185);			 //Bar, Bright
+			pal[101].setto(7, 59, 122);			 //Bar, Dark
+			pal[102].setto(10, 14, 62);			 //Guideline
+			pal[103].setto(5, 7, 31);				 //Dark guideline
+			pal[104].setto(196, 66, 16);			//Note, dark part
+			pal[105].setto(255,254,132);			//Note, bright part
 			
 			//Purple
-			pal[110].setto(160, 5, 185);      //Bar, Bright
-			pal[111].setto(104, 7, 122);      //Bar, Dark
-			pal[112].setto(62, 10, 50);       //Guideline
-			pal[113].setto(31, 5, 25);       //Dark guideline
-			pal[114].setto(196, 66, 16);      //Note, dark part
-			pal[115].setto(255,254,132);      //Note, bright part
+			pal[110].setto(160, 5, 185);			//Bar, Bright
+			pal[111].setto(104, 7, 122);			//Bar, Dark
+			pal[112].setto(62, 10, 50);			 //Guideline
+			pal[113].setto(31, 5, 25);			 //Dark guideline
+			pal[114].setto(196, 66, 16);			//Note, dark part
+			pal[115].setto(255,254,132);			//Note, bright part
 			
 			//Red
-			pal[120].setto(185, 5, 50);      //Bar, Bright
-			pal[121].setto(122,7,38);      //Bar, Dark
-			pal[122].setto(62, 15, 10);       //Guideline
-			pal[123].setto(31, 8, 5);       //Dark guideline
-			pal[124].setto(196, 66, 16);      //Note, dark part
-			pal[125].setto(255,254,132);      //Note, bright part
+			pal[120].setto(185, 5, 50);			//Bar, Bright
+			pal[121].setto(122,7,38);			//Bar, Dark
+			pal[122].setto(62, 15, 10);			 //Guideline
+			pal[123].setto(31, 8, 5);			 //Dark guideline
+			pal[124].setto(196, 66, 16);			//Note, dark part
+			pal[125].setto(255,254,132);			//Note, bright part
 			
 			//Orange/Yellow
-			pal[130].setto(185, 101, 5);     //Bar, Bright
-			pal[131].setto(122, 66, 7);     //Bar, Dark
-			pal[132].setto(62, 55, 10);       //Guideline
-			pal[133].setto(30, 27, 5);       //Dark guideline
-			pal[134].setto(196, 66, 16);      //Note, dark part
-			pal[135].setto(255, 254, 132);      //Note, bright part
+			pal[130].setto(185, 101, 5);		 //Bar, Bright
+			pal[131].setto(122, 66, 7);		 //Bar, Dark
+			pal[132].setto(62, 55, 10);			 //Guideline
+			pal[133].setto(30, 27, 5);			 //Dark guideline
+			pal[134].setto(196, 66, 16);			//Note, dark part
+			pal[135].setto(255, 254, 132);			//Note, bright part
 			
 			//Green
-			pal[140].setto(20, 185, 5);      //Bar, Bright
-			pal[141].setto(19, 122, 7);      //Bar, Dark
-			pal[142].setto(10, 62, 23);       //Guideline
-			pal[143].setto(5, 30, 12);       //Dark guideline
-			pal[144].setto(196, 66, 16);      //Note, dark part
-			pal[145].setto(255, 254, 132);      //Note, bright part
+			pal[140].setto(20, 185, 5);			//Bar, Bright
+			pal[141].setto(19, 122, 7);			//Bar, Dark
+			pal[142].setto(10, 62, 23);			 //Guideline
+			pal[143].setto(5, 30, 12);			 //Dark guideline
+			pal[144].setto(196, 66, 16);			//Note, dark part
+			pal[145].setto(255, 254, 132);			//Note, bright part
 			
 			//Cyan
-			pal[150].setto(5, 140, 185);      //Bar, Bright
-			pal[151].setto(7, 96, 122);      //Bar, Dark
-			pal[152].setto(10, 31, 62);       //Guideline
-			pal[153].setto(5, 14, 30);       //Dark guideline
-			pal[154].setto(196, 66, 16);      //Note, dark part
-			pal[155].setto(255,254,132);      //Note, bright part
+			pal[150].setto(5, 140, 185);			//Bar, Bright
+			pal[151].setto(7, 96, 122);			//Bar, Dark
+			pal[152].setto(10, 31, 62);			 //Guideline
+			pal[153].setto(5, 14, 30);			 //Dark guideline
+			pal[154].setto(196, 66, 16);			//Note, dark part
+			pal[155].setto(255,254,132);			//Note, bright part
 			
 			//Cyan
-			pal[160].setto(5, 140, 185);      //Bar, Bright
-			pal[161].setto(7, 96, 122);      //Bar, Dark
-			pal[162].setto(10, 31, 62);       //Guideline
-			pal[163].setto(5, 14, 30);       //Dark guideline
-			pal[164].setto(196, 66, 16);      //Note, dark part
-			pal[165].setto(255, 254, 132);      //Note, bright part
+			pal[160].setto(5, 140, 185);			//Bar, Bright
+			pal[161].setto(7, 96, 122);			//Bar, Dark
+			pal[162].setto(10, 31, 62);			 //Guideline
+			pal[163].setto(5, 14, 30);			 //Dark guideline
+			pal[164].setto(196, 66, 16);			//Note, dark part
+			pal[165].setto(255, 254, 132);			//Note, bright part
 			
 			//Grayscale
-			pal[300].setto(140, 140, 140);      //Bar, Bright
-			pal[301].setto(96, 96, 96);      //Bar, Dark
-			pal[302].setto(31, 31, 31);       //Guideline
-			pal[303].setto(14, 14, 14);       //Dark guideline
-			pal[304].setto(196, 66, 16);      //Note, dark part
-			pal[305].setto(255,254,132);      //Note, bright part
+			pal[300].setto(140, 140, 140);			//Bar, Bright
+			pal[301].setto(96, 96, 96);			//Bar, Dark
+			pal[302].setto(31, 31, 31);			 //Guideline
+			pal[303].setto(14, 14, 14);			 //Dark guideline
+			pal[304].setto(196, 66, 16);			//Note, dark part
+			pal[305].setto(255,254,132);			//Note, bright part
 			
 			//Darkened grayscale
-			pal[310].setto(70, 70, 70);      //Bar, Bright
-			pal[311].setto(48, 48, 48);      //Bar, Dark
-			pal[312].setto(15, 15, 15);       //Guideline
-			pal[313].setto(7, 7, 7);       //Dark guideline
-			pal[314].setto(196, 66, 16);      //Note, dark part
-			pal[315].setto(255,254,132);      //Note, bright part
+			pal[310].setto(70, 70, 70);			//Bar, Bright
+			pal[311].setto(48, 48, 48);			//Bar, Dark
+			pal[312].setto(15, 15, 15);			 //Guideline
+			pal[313].setto(7, 7, 7);			 //Dark guideline
+			pal[314].setto(196, 66, 16);			//Note, dark part
+			pal[315].setto(255,254,132);			//Note, bright part
 			
 		}
 		
@@ -158,7 +158,7 @@
 				for (i = 0; i < 12; i++) {
 					if (control.musicbox[control.currentbox].start + i < control.drumkit[j].size) {
 						if (control.musicbox[control.currentbox].start + i > -1) {
-						  print(3, pianorollposition + (linesize * 12) - (i * linesize), control.drumkit[j].voicename[control.musicbox[control.currentbox].start + i], 0, false, true);
+							print(3, pianorollposition + (linesize * 12) - (i * linesize), control.drumkit[j].voicename[control.musicbox[control.currentbox].start + i], 0, false, true);
 						}else {
 							if (control.musicbox[control.currentbox].recordfilter == 1) {
 								fillrect(0, pianorollposition + (12 * linesize), screenwidth, linesize, 13);
@@ -173,7 +173,7 @@
 			}else{
 				for (i = 0; i < 12; i++) {
 					if (control.musicbox[control.currentbox].start + i > -1) {
-					  print(3, pianorollposition + (linesize * 12) - (i * linesize), control.notename[control.pianoroll[control.musicbox[control.currentbox].start + i]], 0);
+						print(3, pianorollposition + (linesize * 12) - (i * linesize), control.notename[control.pianoroll[control.musicbox[control.currentbox].start + i]], 0);
 					}else {
 						if (control.musicbox[control.currentbox].recordfilter == 1) {
 							fillrect(0, pianorollposition + (12 * linesize), screenwidth, linesize, 13);
@@ -188,7 +188,7 @@
 			
 			//Scroll bar
 			if (control.musicbox[control.currentbox].recordfilter == 1) {				
-			  fillrect(screenwidth - 10, pianorollposition + linesize, 10, linesize * 12, 9);
+				fillrect(screenwidth - 10, pianorollposition + linesize, 10, linesize * 12, 9);
 			}else {
 				fillrect(screenwidth - 10, pianorollposition + linesize, 10, linesize * 12, 4);
 			}
@@ -268,7 +268,7 @@
 			//Instrument
 			fillrect(5, (linesize * 23), 140, linesize, 1);
 			drawicon(10, (linesize*23) + 2, 1);
-			print(24, (linesize * 23), String(control.musicbox[control.currentbox].instr+1) + "  " + control.instrument[control.musicbox[control.currentbox].instr].name, 0, false, true);
+			print(24, (linesize * 23), String(control.musicbox[control.currentbox].instr+1) + "	" + control.instrument[control.musicbox[control.currentbox].instr].name, 0, false, true);
 			
 			
 			if (control.instrument[control.musicbox[control.currentbox].instr].type == 0) {
@@ -338,7 +338,7 @@
 				if (control.doublesize) {
 					control.drawnotelength = control.musicbox[t].notes[mbj].y;
 				}else{
-				  control.drawnotelength = control.musicbox[t].notes[mbj].y * 2;
+					control.drawnotelength = control.musicbox[t].notes[mbj].y * 2;
 				}
 				if (mbi + control.musicbox[t].notes[mbj].y > control.boxcount) {
 					//54 for each bar
@@ -353,7 +353,7 @@
 				if (control.drawnoteposition > -1) {			
 					control.drawnoteposition -= control.musicbox[t].bottomnote;
 					if(control.musicbox[t].notespan>10){
-					  control.drawnoteposition = ((control.drawnoteposition * 8) / control.musicbox[t].notespan) + 2;
+						control.drawnoteposition = ((control.drawnoteposition * 8) / control.musicbox[t].notespan) + 2;
 					}else {
 						control.drawnoteposition++;
 						if (control.musicbox[t].notespan < 6) {
@@ -361,10 +361,10 @@
 						}
 					}
 					if (control.drawnoteposition >= 1 && control.drawnoteposition < 11) {
-				    if (control.doublesize) {
+						if (control.doublesize) {
 							fillrect(xp + 21 + mbi, yp + 11 - control.drawnoteposition, control.drawnotelength, 1, 105 + (temppal * 10));
 						}else{
-					    fillrect(xp + 21 + (mbi * 2), yp + 11 - control.drawnoteposition, control.drawnotelength, 1, 105 + (temppal * 10));
+							fillrect(xp + 21 + (mbi * 2), yp + 11 - control.drawnoteposition, control.drawnotelength, 1, 105 + (temppal * 10));
 						}
 					}
 				}
@@ -382,7 +382,7 @@
 			}
 			
 			if (t + 1 < 10) {
-			  print(xp + 5, yp + 1, String(t + 1), 2, false, true);
+				print(xp + 5, yp + 1, String(t + 1), 2, false, true);
 			}else {
 				print(xp + 2, yp + 1, String(t + 1), 2, false, true);
 			}
@@ -427,13 +427,13 @@
 				if (control.arrangecurx == 0 && control.arrange.viewstart == -1) {
 					/* not using this anymore
 					if(control.mx<patternwidth/2){
-					  drawbox(0, linesize +(control.arrangecury * patternheight), patternwidth / 2, patternheight, 0);
+						drawbox(0, linesize +(control.arrangecury * patternheight), patternwidth / 2, patternheight, 0);
 					}else {
 						drawbox(patternwidth/2, linesize +(control.arrangecury * patternheight), patternwidth / 2, patternheight, 0);
 					}*/
 					drawbox(0, linesize, patternwidth, pianorollposition-6, 0);	
 				}else {
-				  drawbox(control.arrangecurx * patternwidth, linesize +(control.arrangecury * patternheight), patternwidth, patternheight, 0);	
+					drawbox(control.arrangecurx * patternwidth, linesize +(control.arrangecury * patternheight), patternwidth, patternheight, 0);	
 				}
 			}
 			
@@ -480,8 +480,8 @@
 				if (control.arrange.viewstart == -1 && control.timelinecurx == 0) {
 					drawbox(0, linesize, patternwidth, pianorollposition-6, 0);
 				}else{
-			    drawbox(control.timelinecurx * patternwidth,  pianorollposition + 4, patternwidth, 6, 0);
-					print(control.timelinecurx * patternwidth,  pianorollposition + 4 - linesize, String(control.arrange.viewstart +control.timelinecurx + 1), 0, false, true);
+					drawbox(control.timelinecurx * patternwidth,	pianorollposition + 4, patternwidth, 6, 0);
+					print(control.timelinecurx * patternwidth,	pianorollposition + 4 - linesize, String(control.arrange.viewstart +control.timelinecurx + 1), 0, false, true);
 				}
 			}
 		}
@@ -491,7 +491,7 @@
 			if (control.looptime % control.barcount==1) {
 				bigprint(10-2+(Math.random()*4), linesize*2-5-6+(Math.random()*4), "BOSCA CEOIL", 255 - (help.glow*4), 64 + (help.glow*2), 255 - help.glow, false, 3);
 			}else{
-			  bigprint(10, linesize * 2 - 5, "BOSCA CEOIL", 255 - (help.glow * 4), 64 + (help.glow * 2), 255 - help.glow, false, 3);
+				bigprint(10, linesize * 2 - 5, "BOSCA CEOIL", 255 - (help.glow * 4), 64 + (help.glow * 2), 255 - help.glow, false, 3);
 			}
 			print(160, (linesize * 4)+4, "v1.02", 2, false, true);
 			
@@ -499,7 +499,7 @@
 			print(10, (linesize * 5)+5, "Created by Terry Cavanagh", 2, false, true);
 			print(10, (linesize * 6)+5, "SiON softsynth library by Kei Mesuda", 2, false, true);
 			print(10, (linesize * 7)+5, "Hold left for advanced options", 2, false, true);
-      print(10, (linesize * 9) + 5, "http://www.distractionware.com", 2, false, true);
+			print(10, (linesize * 9) + 5, "http://www.distractionware.com", 2, false, true);
 			
 			//Button
 			fillrect(220, linesize * 2, 75, 10, 12);
@@ -520,7 +520,7 @@
 			
 			fillrect(220, (linesize * 7)-1, 160, linesize, 1);
 			rprint(280, (linesize * 7) - 1, "PATTERN", 0, true);
-		  drawicon(290, (linesize * 7)-1, 3);
+			drawicon(290, (linesize * 7)-1, 3);
 			print(305, (linesize * 7) - 1, String(control.barcount), 0, false, true);
 			drawicon(320, (linesize * 7) - 1, 2);
 			drawicon(335, (linesize * 7)-1, 3);
@@ -543,26 +543,26 @@
 			print(170, (linesize * 3) +2, String(control.buffersize), 0, false, true);
 			
 			if (control.buffersize != control.currentbuffersize) {
-			  if (help.slowsine >= 32) {
-				  print(37, (linesize * 4) + 7, "REQUIRES RESTART TO TAKE EFFECT", 0);
+				if (help.slowsine >= 32) {
+					print(37, (linesize * 4) + 7, "REQUIRES RESTART TO TAKE EFFECT", 0);
 				}else {
-				  print(37, (linesize * 4) + 7, "REQUIRES RESTART TO TAKE EFFECT", 15);
+					print(37, (linesize * 4) + 7, "REQUIRES RESTART TO TAKE EFFECT", 15);
 				}
 			}else{
-			  print(37, (linesize * 4) + 7, "REQUIRES RESTART TO TAKE EFFECT", 2);
+				print(37, (linesize * 4) + 7, "REQUIRES RESTART TO TAKE EFFECT", 2);
 			}
 			
 			fillrect(20, (linesize * 6) + 2, 160, linesize, 1);
-      rprint(80, (linesize * 6) + 2, "SWING", 0, true);
-      drawicon(105, (linesize * 6) + 2, 3);
+			rprint(80, (linesize * 6) + 2, "SWING", 0, true);
+			drawicon(105, (linesize * 6) + 2, 3);
 			if(control.swing==-10){
-        print(120, (linesize * 6) + 2, String(control.swing), 0, false, true);
+				print(120, (linesize * 6) + 2, String(control.swing), 0, false, true);
 			}else if (control.swing < 0 || control.swing == 10 ) {
 				print(125, (linesize * 6) + 2, String(control.swing), 0, false, true);
 			}else{
 				print(130, (linesize * 6) + 2, String(control.swing), 0, false, true);
 			}
-      drawicon(150, (linesize * 6) + 2, 2);
+			drawicon(150, (linesize * 6) + 2, 2);
 			print(37, (linesize * 7) + 7, "EXPERIMENTAL: Swing function by @increpare", 2);
 		}
 		
@@ -591,14 +591,14 @@
 				}else {
 					//Normal
 					if (control.patternmanagerview + k < control.numboxes) {
-				    drawmusicbox(control, (patternwidth * 6) + 3, linesize + 2 + (k * patternheight), control.patternmanagerview + k);
+						drawmusicbox(control, (patternwidth * 6) + 3, linesize + 2 + (k * patternheight), control.patternmanagerview + k);
 					}
 				}
 			}
 			
 			//Draw the cursor
 			if (control.patterncury > -1) {
-			  drawbox((patternwidth * 6) + 3, linesize + 2 + (control.patterncury * patternheight), patternwidth, patternheight, 0);
+				drawbox((patternwidth * 6) + 3, linesize + 2 + (control.patterncury * patternheight), patternwidth, patternheight, 0);
 			}
 		}
 		
@@ -635,7 +635,7 @@
 			}
 			//Draw the cursor
 			if (control.instrumentcury > -1) {
-			  drawbox(2, linesize + 2 + (control.instrumentcury * patternheight), 136, patternheight, 0);
+				drawbox(2, linesize + 2 + (control.instrumentcury * patternheight), 136, patternheight, 0);
 			}
 		}
 		
@@ -656,7 +656,7 @@
 			if (control.currentbox > -1) {
 				if (control.musicbox[control.currentbox].recordfilter == 1) {
 					if(control.musicbox[control.currentbox].instr == control.currentinstrument){
-					  i = 1;
+						i = 1;
 					}
 				}
 			}
@@ -671,7 +671,7 @@
 					}
 				}
 				if ((help.slowsine % 32) < 16) {
-				  print(143 + 40, (linesize * 4) + 57, "! RECORDING FOR PATTERN " + String(control.currentbox + 1) + "!", 15, false, true);
+					print(143 + 40, (linesize * 4) + 57, "! RECORDING FOR PATTERN " + String(control.currentbox + 1) + "!", 15, false, true);
 				}
 				
 				//Move over recording
@@ -680,8 +680,8 @@
 				fillrect(screenwidth - 21 + 1, (linesize * 4) + j + 1, 8, 8, 100 + (control.instrument[control.currentinstrument].palette * 10));		
 				
 				i = int((control.musicbox[control.currentbox].cutoffgraph[control.looptime%control.boxcount] * 200) / 128);
-			  j = int((control.musicbox[control.currentbox].resonancegraph[control.looptime%control.boxcount] * 45) / 9);
-			  fillrect(143 + i, (linesize * 4) + j, 10, 10, 101 + (control.instrument[control.currentinstrument].palette * 10));
+				j = int((control.musicbox[control.currentbox].resonancegraph[control.looptime%control.boxcount] * 45) / 9);
+				fillrect(143 + i, (linesize * 4) + j, 10, 10, 101 + (control.instrument[control.currentinstrument].palette * 10));
 				fillrect(143 + i + 1, (linesize * 4) + j + 1, 8, 8, 100 + (control.instrument[control.currentinstrument].palette * 10));		
 			}else {
 				fillrect(143, (linesize * 4), screenwidth - 174, 55, 102 + (control.instrument[control.currentinstrument].palette * 10));
@@ -695,7 +695,7 @@
 				}
 				
 				print(143 + 50, (linesize * 4) + 57, "LOW PASS FILTER PAD", 103 + (control.instrument[control.currentinstrument].palette * 10));
-			  print(screenwidth - 26, (linesize * 4) + 57, "VOL", 103 + (control.instrument[control.currentinstrument].palette * 10));				
+				print(screenwidth - 26, (linesize * 4) + 57, "VOL", 103 + (control.instrument[control.currentinstrument].palette * 10));				
 				
 				//Default values
 				j = 0;
